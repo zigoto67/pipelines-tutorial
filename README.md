@@ -152,9 +152,9 @@ Note that only the requirement for a git repository is declared on the task and 
 Install the `apply-manifests` and `update-deployment` tasks from the repository using `oc` or `kubectl`, which you will need for creating a pipeline in the next section:
 
 ```bash
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/01_pipeline/01_apply_manifest_task.yaml
+$ oc create -f https://raw.githubusercontent.com/zigoto67/pipelines-tutorial/master/01_pipeline/01_apply_manifest_task.yaml
 
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/01_pipeline/02_update_deployment_task.yaml
+$ oc create -f https://raw.githubusercontent.com/zigoto67/pipelines-tutorial/master/01_pipeline/02_update_deployment_task.yaml
 ```
 
 You can take a look at the tasks you created using the [Tekton CLI](https://github.com/tektoncd/cli/releases):
@@ -294,7 +294,7 @@ The execution order of task is determined by dependencies that are defined betwe
 Create the pipeline by running the following:
 
 ```bash
-$ oc create -f https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/01_pipeline/04_pipeline.yaml
+$ oc create -f https://raw.githubusercontent.com/zigoto67/pipelines-tutorial/master/01_pipeline/04_pipeline.yaml
 ```
 
 Alternatively, in the OpenShift Web Console, you can click on the **+** at the top right of the screen while you are in the **pipelines-tutorial** project:
@@ -352,9 +352,9 @@ Similarly, start a pipeline to build and deploy frontend application:
 
 ```bash
 $ tkn pipeline start build-and-deploy \
-    -w name=shared-workspace,volumeClaimTemplateFile=https://raw.githubusercontent.com/openshift/pipelines-tutorial/master/01_pipeline/03_persistent_volume_claim.yaml \
+    -w name=shared-workspace,volumeClaimTemplateFile=https://raw.githubusercontent.com/zigoto67/pipelines-tutorial/master/01_pipeline/03_persistent_volume_claim.yaml \
     -p deployment-name=vote-ui \
-    -p git-url=http://github.com/openshift-pipelines/vote-ui.git \
+    -p git-url=http://github.com/zigoto67/vote-ui.git \
     -p IMAGE=image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/vote-ui \
 
 Pipelinerun started: build-and-deploy-run-xy7rw
